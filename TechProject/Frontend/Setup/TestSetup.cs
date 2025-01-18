@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using WebDriverManager.DriverConfigs.Impl;
 using WebDriverManager;
+using WebDriverManager.Helpers;
 
 namespace Frontend.Setup
 {
@@ -12,7 +13,7 @@ namespace Frontend.Setup
         [TestInitialize]
         public void TestInit()
         {
-            new DriverManager().SetUpDriver(new ChromeConfig());
+            new DriverManager().SetUpDriver(new ChromeConfig(), VersionResolveStrategy.MatchingBrowser);
             driver = new ChromeDriver();
         }
 
